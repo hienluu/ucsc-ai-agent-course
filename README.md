@@ -43,3 +43,9 @@ This github repo is for the course. It includes resources and examples.
 - Python 3.14+
 - Google GenAI API key
 - Dependencies listed in `pyproject.toml`
+
+
+### Notes
+git branch -M main
+git remote add origin git@github.com:hienluu/ucsc-ai-agent-course.git
+git push -u origin main
