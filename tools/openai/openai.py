@@ -1,0 +1,282 @@
+import os
+import json
+from typing import Any, Dict, List, Callable
+import argparse
+from urllib import response
+
+from ..tool_functions import get_location, get_current_time, get_weather, calculate_sum
+
+from dotenv import load_dotenv
+from openai import OpenAI
+
+
+# Function calling examples with OpenAI
+# Resources:
+# * https://platform.openai.com/docs/guides/function-calling
+# * https://github.com/openai/openai-python
+#
+
+
+def get_client() -> OpenAI:
+    """Get a configured OpenAI client."""
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY environment variable is required")
+    return OpenAI(api_key=api_key)
+
+
+def create_tool_from_function(func: Callable) -> Dict:
+    """
+    Create an OpenAI tool schema from a Python function.
+
+    Args:
+        func: A Python function with type hints and docstring
+
+    Returns:
+        An OpenAI tool schema dictionary
+    """
+    import inspect
+
+    # Get function signature
+    sig = inspect.signature(func)
+    params = {}
+    required_params = []
+
+    for name, param in sig.parameters.items():
+        param_info = {
+            "type": "string",  # Default type
+            "description": f"Parameter {name}"
+        }
+
+        # Try to infer type from annotation
+        if param.annotation != inspect.Parameter.empty:
+            if param.annotation == int:
+                param_info["type"] = "integer"
+            elif param.annotation == float:
+                param_info["type"] = "number"
+            elif param.annotation == bool:
+                param_info["type"] = "boolean"
+            elif param.annotation == list:
+                param_info["type"] = "array"
+            # Add more type mappings as needed
+
+        # Track required parameters (those without defaults)
+        if param.default == inspect.Parameter.empty:
+            required_params.append(name)
+
+        params[name] = param_info
+
+    # Create the tool schema for OpenAI
+    tool_schema = {
+        "type": "function",       
+        "name": func.__name__,
+        "description": func.__doc__ or f"Function {func.__name__}",
+        "parameters": {
+            "type": "object",
+            "properties": params,
+            "required": required_params
+        }
+        
+    }
+
+    return tool_schema
+
+
+def execute_tool_call(tool_name: str, tool_args: Dict[str, Any], tools: Dict[str, Callable]) -> Any:
+    """
+    Execute a tool call from the AI model.
+
+    Args:
+        tool_name: The name of the tool function to execute
+        tool_args: Dictionary of arguments to pass to the function
+        tools: Dictionary mapping function names to callable functions
+
+    Returns:
+        The result of executing the function
+    """
+    print(f">>> Executing tool call: {tool_name} with args: {tool_args}")
+    if tool_name not in tools:
+        raise ValueError(f"Unknown tool function: {tool_name}")
+
+    func = tools[tool_name]
+
+    print(f">>> Executing tool: {tool_name} with args: {tool_args}")
+    try:
+        return func(**tool_args)
+    except Exception as e:
+        return f"Error executing {tool_name}: {str(e)}"
+
+
+def generate_with_tools(
+    client: OpenAI,
+    prompt: str,
+    tools: List[Dict],
+    tool_functions: Dict[str, Callable],
+    model: str
+) -> str:
+    """
+    Generate a response using tools with manual function calling.
+
+    Args:
+        client: OpenAI client
+        prompt: The user prompt
+        tools: List of tool schemas
+        tool_functions: Dictionary of function name to callable
+        model: Model name to use
+
+    Returns:
+        The final response after tool execution
+    """
+    messages = [{"role": "user", "content": prompt}]
+
+    # Generate initial response
+    response = client.responses.create(
+        model=model,
+        input=messages,
+        tools=tools,
+    )
+
+    # Save function call outputs for subsequent requests
+    messages += response.output
+
+    # Process the response
+    final_response = ""
+    
+
+    # Check if there are tool calls
+    for item in response.output:
+        print(f"Processing response item: {item.type}")
+        if item.type == "function_call":
+            tool_name = item.name
+            tool_args = json.loads(item.arguments)
+            tool_result = execute_tool_call(tool_name, tool_args, tool_functions)
+
+            messages.append({
+                "type": "function_call_output",
+                "call_id": item.call_id,
+                "output": str(tool_result)
+            })
+
+
+    # Generate follow-up response
+    follow_up_response = client.responses.create(
+        model=model,
+        input=messages,
+        tools=tools,
+    )
+
+    #return response.model_dump_json(indent=2)
+    return follow_up_response.output_text
+
+
+def local_tool_example(model: str, prompt: str = "What's the temperature in London?") -> None:
+    """Example using local tools with manual function calling."""
+    print(">>> Running local tool example")
+    try:
+        # Initialize client
+        client = get_client()
+        print("✓ Connected to OpenAI")
+
+        # Create tools
+        tool_functions = {
+            "get_weather": get_weather,
+            "calculate_sum": calculate_sum,
+            "get_current_time": get_current_time,
+            "get_location": get_location
+        }
+
+        tools = [create_tool_from_function(func) for func in tool_functions.values()]
+        
+
+        print(f"✓ Created {len(tools)} tools")
+
+        print(f"\n--- Testing: {prompt} ---")
+        try:
+            response = generate_with_tools(
+                client=client,
+                prompt=prompt,
+                tools=tools,
+                tool_functions=tool_functions,
+                model=model
+            )
+            print(f"Response: {response}")
+        except Exception as e:
+            print(f"Error: {e}")
+
+    except ValueError as e:
+        print(f"Configuration error: {e}")
+        print("Make sure OPENAI_API_KEY is set in environment variables")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+
+
+def local_tool_auto_func_calling_example(model: str, prompt: str = "What's the temperature in London?") -> None:
+    """Example using local tools with auto function calling."""
+    print(f"Testing auto-function calling with model: {model} and prompt: {prompt}")
+    try:
+        # Initialize client
+        client = get_client()
+        print("✓ Connected to OpenAI")
+
+        # Create tools
+        tool_functions = {
+            "get_weather": get_weather,
+            "calculate_sum": calculate_sum,
+            "get_current_time": get_current_time,
+            "get_location": get_location
+        }
+
+        tools = [create_tool_from_function(func) for func in tool_functions.values()]
+        print(f"✓ Created {len(tools)} tools")
+
+        messages = [{"role": "user", "content": prompt}]
+
+        # Make the request
+        response = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            tools=tools,
+            tool_choice="auto"
+        )
+
+        print(f"Response: {response.choices[0].message.content}")
+
+    except ValueError as e:
+        print(f"Configuration error: {e}")
+        print("Make sure OPENAI_API_KEY is set in environment variables")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+
+
+def main():
+    """Main function to demonstrate OpenAI tools functionality."""
+    parser = argparse.ArgumentParser(description='Test OpenAI function calling')
+    parser.add_argument('--prompt', '-p',
+                       default="What's the temperature in London?",
+                       help='Prompt to send to the AI model')
+    parser.add_argument('--mode', '-m',
+                       choices=['auto', 'manual'],
+                       default='manual',
+                       help='Function calling mode (auto or manual, default: manual)')
+    parser.add_argument('--model',
+                       default=None,
+                       help='OpenAI model to use (overrides OPENAI_MODEL env var)')
+
+    args = parser.parse_args()
+
+    load_dotenv()
+    openai_model = args.model or os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+    print(f"Using OpenAI model: {openai_model}")
+    print(f"Prompt: {args.prompt}")
+    print(f"Mode: {args.mode}")
+
+    if args.mode == "auto":
+        local_tool_auto_func_calling_example(openai_model, args.prompt)
+    elif args.mode == "manual":
+        local_tool_example(openai_model, args.prompt)
+    else:
+        print(f"Unknown mode: {args.mode}. Please choose 'auto' or 'manual'.")
+
+
+if __name__ == "__main__":
+    main()

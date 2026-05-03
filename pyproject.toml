@@ -8,4 +8,5 @@ dependencies = [
     "dotenv>=0.9.9",
     "google-adk>=1.32.0",
     "google-genai>=1.74.0",
+    "openai>=2.33.0",
 ]
