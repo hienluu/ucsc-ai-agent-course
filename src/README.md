@@ -53,3 +53,7 @@ src/
 
 ## Basic ADK command example
 - `adk create sample-agent --model gemini-2.5-flash-lite --api_key $GOOGLE_API_KEY`
+
+## Notes
+* git branch -M main
+* git push -u origin main
