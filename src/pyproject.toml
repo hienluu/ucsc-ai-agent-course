@@ -1,0 +1,16 @@
+[project]
+name = "ucsc-ai-agent-course"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "anthropic>=0.97.0",
+    "dotenv>=0.9.9",
+    "dw-cli>=0.1.23",
+    "google-adk>=1.32.0",
+    "google-genai>=1.74.0",
+    "litellm>=1.83.0",
+    "openai>=2.33.0",
+    "rich>=15.0.0",
+]
