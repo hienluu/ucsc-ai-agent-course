@@ -27,6 +27,7 @@
 See the respective README.md file in the sub folder
 * [Claude examples](./tools/claude/README.md)
 * [Gemini examples](./tools/gemini/README.md)
+* [OpenAI examples](./tools/openai/README.md)
 
 
 ### Project Structure
