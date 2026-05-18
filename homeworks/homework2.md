@@ -1,4 +1,4 @@
-## Homework 2 - multi-agent application
+## Homework 2 - Multi-agent Application
 
 ### Goals
 * Develop a practical and fun multi-agent system
