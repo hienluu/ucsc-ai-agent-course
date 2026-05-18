@@ -1,6 +1,6 @@
-# UCSC Extension - [Developing AI Agent Applications Course](https://www.ucsc-extension.edu/courses/developing-ai-agent-applications)
+## Contains source code for various examples
 
-## Setup Steps
+### Setup Steps
 
 1. **Install dependencies** (this project uses [uv](https://docs.astral.sh/uv/)):
    ```bash
@@ -23,12 +23,13 @@
    - Create a new API key
    - Add it to your `.env` file
 
-## Running examples about tool calling, see the respective README.md file in the sub folder
+### Running examples about tool calling
+See the respective README.md file in the sub folder
 * [Claude examples](./tools/claude/README.md)
 * [Gemini examples](./tools/gemini/README.md)
 
 
-## Project Structure
+### Project Structure
 
 ```
 src/
@@ -48,15 +49,12 @@ src/
 └── README.md                   # This file
 ```
 
-## Requirements
+### Requirements
 
 - Python 3.13+
 - Google GenAI API key
 - Dependencies listed in `pyproject.toml`
 
-## Basic ADK command example
-- `adk create sample-agent --model gemini-2.5-flash-lite --api_key $GOOGLE_API_KEY`
-
-## Notes
+### Notes
 * git branch -M main
 * git push -u origin main
