@@ -7,7 +7,6 @@
 ### Homework
 * Developing a simple agent without using a framework
 * Browse [Google Agent SDK](https://adk.dev/)
-* https://github.com/hienluu/claude-code-clone
 * [Build an AI Agent in Python on boot.dev](https://www.boot.dev/courses/build-ai-agent-python)
 * [Youtube video: Guide to Agentic AI – Build a Python Coding Agent with Gemini](https://www.youtube.com/watch?v=Q3Gb7Rjre3U)
 
@@ -22,3 +21,4 @@
 * [Youtube video: Guide to Agentic AI – Build a Python Coding Agent with Gemini](https://www.youtube.com/watch?v=Q3Gb7Rjre3U)
 * [Gemini ADK examples](https://github.com/janakiramm/gemini-adk.git)
 * [Agents in Action](https://github.com/traversaal-ai/agents-in-action/tree/main)
+* [Claude Code Clone](https://github.com/hienluu/claude-code-clone)
