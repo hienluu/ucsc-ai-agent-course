@@ -11,4 +11,4 @@ The goal is to understand the foundation of an agent, which is the ReAct loop
 * [Gemini API with automatic python function support](https://googleapis.github.io/python-genai/#automatic-python-function-support)
 * [Gemini built-in tools](https://ai.google.dev/gemini-api/docs/tools)
 * [Practical Guide on how to build an Agent from scratch with Gemini 3](https://www.philschmid.de/building-agents)
-
+* [wttr.in — the right way to curl weather](https://github.com/chubin/wttr.in)
