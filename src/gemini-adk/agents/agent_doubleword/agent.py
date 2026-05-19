@@ -15,6 +15,7 @@ logging.basicConfig(level=logging.ERROR)
 from dotenv import load_dotenv
 load_dotenv()
 
+
 DOUBLEWORD_API_KEY = os.getenv("DOUBLEWORD_API_KEY")
 DOUBLEWORD_MODEL = os.getenv("DOUBLEWORD_MODEL")
 DOUBLEWORD_API_URL = os.getenv("DOUBLEWORD_API_URL")
@@ -22,8 +23,6 @@ DOUBLEWORD_API_URL = os.getenv("DOUBLEWORD_API_URL")
 if DOUBLEWORD_API_KEY is None:
     raise ValueError("DOUBLEWORD_API_KEY is not set in the environment variables.")
 
-
-print(f"DOUBLEWORD_API_KEY: {DOUBLEWORD_API_KEY}")
 print(f"DOUBLEWORD_MODEL: {DOUBLEWORD_MODEL}")
 print(f"DOUBLEWORD_API_URL: {DOUBLEWORD_API_URL}")
 
@@ -42,6 +41,6 @@ root_agent = Agent(
             thinking_budget=0,        
         ),
     ),
-    name="my_agent",
-    instruction="You are a helpful assistant.",
+    name="open_source_model_agent",
+    instruction="You are a helpful assistant with a sense of humor and openness.",
 )

@@ -11,7 +11,7 @@ This folder demonstrates how to use function calling tools with Google's Generat
 
 ### Usage
 
-Run the main CLI entrypoint from the "src" folder
+IMPORT: Run the main CLI entrypoint from the "src" folder
 
 ```bash
 uv run -m tools.gemini.gemini --prompt "What's the weather in San Francisco?" --mode auto
