@@ -12,3 +12,6 @@ The goal is to understand the foundation of an agent, which is the ReAct loop
 * [Gemini built-in tools](https://ai.google.dev/gemini-api/docs/tools)
 * [Practical Guide on how to build an Agent from scratch with Gemini 3](https://www.philschmid.de/building-agents)
 * [wttr.in — the right way to curl weather](https://github.com/chubin/wttr.in)
+* [How AI Agents Actually Work - Explained in One Python File](https://www.youtube.com/watch?v=Q3Gb7Rjre3U)
+* [Single-File AI Agent Tutorial](https://github.com/daveebbelaar/single-file-ai-agent-tutorial/tree/master)
+* [Original - Single-File AI Agent Tutorial](https://github.com/leobeeson/single-file-ai-agent-tutorial)
