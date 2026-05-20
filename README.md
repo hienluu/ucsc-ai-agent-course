@@ -15,6 +15,7 @@
 
 ### News of the week
 05/18/2026
+* [Build with Gemini XPRIZE - $2M Prize](https://www.geminixprize.com/)
 * [Google Cloud Rapid Agent Hackathon](https://rapid-agent.devpost.com/)
 * [Google I/O 2026]
   * [A multi-agent marathon simulation](https://github.com/GoogleCloudPlatform/race-condition)
