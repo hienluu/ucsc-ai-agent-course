@@ -1,8 +1,10 @@
+import argparse
 import os
-from google import genai
-from google.genai import types
 
 from dotenv import load_dotenv
+from google import genai
+from google.genai import types
+from ..tool_functions import get_location, get_current_time, get_weather, calculate_sum
 
 
 def get_client() -> genai.Client:
@@ -21,45 +23,83 @@ def get_stock_price(ticker: str, currency: str = "USD") -> str:
         ticker: The stock symbol (e.g., 'GOOG', 'AAPL').
         currency: The currency to return the price in. Defaults to 'USD'.
     """
-    # In a real app, you would fetch live data here
     if ticker.upper() == "GOOG":
         return f"180 {currency}"
     return f"Data not found for {ticker}"
 
-def main():
+
+def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Run the Gemini function declaration example with an optional question."
+    )
+    parser.add_argument(
+        "question",
+        nargs="?",
+        default=None,
+        help="The question to send to Gemini. Defaults to a stock price prompt.",
+    )
+    return parser.parse_args()
+
+SYSTEM_INSTRUCTION = """
+    You are a helpful assistant and curteous. 
+    If you don't know the answer, say you don't know. You can call functions to get information you need to answer the question."
+"""
+
+def main(question: str | None = None) -> None:
+    """Run the Gemini example with the provided question."""
     client = get_client()
-    # 2. Automatically generate the declaration from your Python function
-    func_declaration = types.FunctionDeclaration.from_callable(
+
+    weather_func = types.FunctionDeclaration.from_callable(
         client=client,
-        callable=get_stock_price
+        callable=get_weather,
     )
 
-    # 3. Wrap it in a Tool object
-    tools = [types.Tool(function_declarations=[func_declaration])]
+    stock_price_func = types.FunctionDeclaration.from_callable(
+        client=client,
+        callable=get_stock_price,
+    )
 
-    # 4. Pass the tool to the model
+    get_location_func = types.FunctionDeclaration.from_callable(
+        client=client,
+        callable=get_location,
+    )
+
+    tools = [types.Tool(function_declarations=[stock_price_func, weather_func, get_location_func])]
+
+    prompt = question or "Can you check the stock price for GOOG in EUR?"
+    print(f"Prompt sent to model: {prompt}")
+
+    client_config = types.GenerateContentConfig(system_instruction=SYSTEM_INSTRUCTION,
+                                                tools=tools)
+
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
-        contents="Can you check the stock price for GOOG in EUR?",
-        config=types.GenerateContentConfig(
-            tools=tools
-        )
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=client_config,
     )
 
-    # 5. Check if the model decided to call your function
     if response.function_calls:
         for call in response.function_calls:
             print(f"Model wants to call function: '{call.name}'")
             print(f"Arguments provided by model: {call.args}")
+            if call.name == "get_stock_price":
+                result = get_stock_price(**call.args)
+                print(f"Function execution result: {result}")
+            elif call.name == "get_location":
+                result = get_location(**call.args)
+                print(f"Function execution result: {result}")
     else:
-        print("Response text:", response.text)
+        print("Model did not call any functions." + response.text)
+            
 
-# ANSI color codes — terminal output only. Strip if you pipe to a file.
+
 BOLD = "\033[1m"
 CYAN = "\033[36m"
 YELLOW = "\033[33m"
 GREEN = "\033[32m"
 RESET = "\033[0m"
+
 
 if __name__ == "__main__":
     bar = "=" * 70
@@ -67,4 +107,5 @@ if __name__ == "__main__":
     print(f"{BOLD}{CYAN} Running Gemini function declaration example...{RESET}")
     print(f"{CYAN}{bar}{RESET}")
     load_dotenv()
-    main()
+    args = parse_args()
+    main(args.question)
