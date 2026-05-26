@@ -12,4 +12,5 @@
 * [OpenAI Using Tools](https://developers.openai.com/api/docs/guides/tools)
 * [Using Tools with Gemini API](https://ai.google.dev/gemini-api/docs/tools)
 * [Introducing advanced tool use on the Claude Developer Platform](https://www.anthropic.com/engineering/advanced-tool-use)
+* [LangChain Fleet - Agents for the whole company](https://www.langchain.com/langsmith/fleet)
 
