@@ -24,6 +24,7 @@ fs_mcp_tool = McpToolset(connection_params=StdioConnectionParams(
     )
 )
 
+# time and time covnersion tool example
 time_mcp_tool = McpToolset(connection_params=StdioConnectionParams(
         server_params = StdioServerParameters(
             command='uvx', 
@@ -32,10 +33,22 @@ time_mcp_tool = McpToolset(connection_params=StdioConnectionParams(
     )
 )
 
+# sequential thinking MCP tools
+thinking_mcp_tool = McpToolset(connection_params=StdioConnectionParams(
+        server_params = StdioServerParameters(
+            command='npx', 
+            args=["-y",  # Argument for npx to auto-confirm install 
+                "@modelcontextprotocol/server-sequential-thinking",            
+             ],
+        ), 
+    )
+)
+
+
 root_agent = LlmAgent(
     model='gemini-3.1-flash-lite',
     name='mcp_example_agent',
     description='A helpful assistant for user questions.  You have access to tools that can help you answer user questions. Use them when appropriate.',
     instruction='Answer user questions to the best of your knowledge',
-    tools=[fs_mcp_tool, time_mcp_tool]
+    tools=[fs_mcp_tool, time_mcp_tool, thinking_mcp_tool]
 )
