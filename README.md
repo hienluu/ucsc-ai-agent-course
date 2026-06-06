@@ -18,6 +18,8 @@
 * [HolmesGPT — The CNCF SRE Agent](https://github.com/HolmesGPT/holmesgpt)
 * [Meta: Business Agent](https://about.fb.com/news/2026/06/meta-business-agent/)
 * [Anthropic: When AI builds itself](https://www.anthropic.com/institute/recursive-self-improvement)
+* [Google’s agentic RAG framework](https://research.google/blog/unlocking-dependable-responses-with-gemini-enterprise-agent-platforms-agentic-rag/)
+  * [A multi-agentic example]
 
 05/18/2026
 * [Build with Gemini XPRIZE - $2M Prize](https://www.geminixprize.com/)
