@@ -3,6 +3,8 @@
 
 ### Resources
 * [ADK Examples - master list](https://github.com/google/adk-samples)
+* [ADK - Tools and Integrations for Agents](https://adk.dev/integrations/)
+  * Good one to integrate with your agents
 * [ADK Day Trip Planning Agent Examples](https://github.com/cuppibla/adk_tutorial/tree/main)
 * [AI agent design patterns](https://www.youtube.com/watch?v=GDm_uH6VxPY)
 * [3 Advanced AI agent design patterns](https://www.youtube.com/watch?v=89KKm_a4M7A)
