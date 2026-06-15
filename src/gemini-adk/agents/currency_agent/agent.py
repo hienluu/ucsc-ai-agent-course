@@ -53,6 +53,7 @@ litellm = LiteLlm(
 
 root_agent = LlmAgent(
     model=litellm,
+    #model="gemini-3.1-flash-lite",
     planner=BuiltInPlanner(        
         thinking_config=types.ThinkingConfig(    
             include_thoughts=False,            
