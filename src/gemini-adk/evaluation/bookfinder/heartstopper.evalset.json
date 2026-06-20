@@ -1,0 +1,237 @@
+{
+  "eval_set_id": "eval_set_11",
+  "name": "eval_set_11",
+  "eval_cases": [
+    {
+      "eval_id": "Help_me_find_Heartstopper_by_Alice_Oseman",
+      "conversation": [
+        {
+          "invocation_id": "e-fbd1c88c-2ba3-4a67-b044-0a2caf16ddea",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Help me find Heartstopper by Alice Oseman"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "\n\nI’m sorry to say that the Orangeville Public Library doesn’t currently have copies of \"Heartstopper\" by Alice Oseman available. 📚❌\n\nHowever, you have a few great local options! I recommend calling **The Paper Heart Bookshop** at **(555) 555-5683** to see if they have it in stock, or ask them about their special order service. 🏪📖\n\nIf you'd prefer to order online, the fastest option is **MapleLeaf Books Online**, which offers delivery in **2-3 business days** with free shipping on orders over $35. 🚚✨"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "book_finder",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_476eee6b31344fbbbdbc0527",
+                        "args": {
+                          "title": "Heartstopper"
+                        },
+                        "name": "search_local_library"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "book_finder",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_476eee6b31344fbbbdbc0527",
+                        "name": "search_local_library",
+                        "response": {
+                          "copies": 0,
+                          "branch": "Orangeville Central Library",
+                          "available": false
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "book_finder",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_991ff0bf921f45fdb5cba17f",
+                        "args": {
+                          "genre": "graphic novel"
+                        },
+                        "name": "find_local_bookstore"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "book_finder",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_991ff0bf921f45fdb5cba17f",
+                        "name": "find_local_bookstore",
+                        "response": {
+                          "result": "I can't find a bookstore that serves that genre of book, sorry!"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "book_finder",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "\n\n"
+                    },
+                    {
+                      "function_call": {
+                        "id": "call_23a0d11c9e714b22b730d6df",
+                        "args": {
+                          "genre": "romance"
+                        },
+                        "name": "find_local_bookstore"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "book_finder",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_23a0d11c9e714b22b730d6df",
+                        "name": "find_local_bookstore",
+                        "response": {
+                          "store_name": "The Paper Heart Bookshop",
+                          "address": "456 Broadway Avenue, Orangeville",
+                          "phone": "(555) 555-5683",
+                          "specialties": "Romance, contemporary fiction, and women's literature",
+                          "note": "Romance book club meets Thursdays"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "book_finder",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_50b67530baf3477db0d4d9b1",
+                        "args": {
+                          "title": "Heartstopper"
+                        },
+                        "name": "order_online"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "book_finder",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_50b67530baf3477db0d4d9b1",
+                        "name": "order_online",
+                        "response": {
+                          "title": "Heartstopper",
+                          "online_retailers": [
+                            {
+                              "name": "MapleLeaf Books Online",
+                              "estimated_delivery": "2-3 business days",
+                              "price_range": "$18-35",
+                              "shipping": "Free shipping over $35",
+                              "note": "Woman-owned and operated"
+                            },
+                            {
+                              "name": "BookStream Orangeville",
+                              "estimated_delivery": "3-5 business days",
+                              "price_range": "$15-32",
+                              "shipping": "$4.99 flat rate shipping",
+                              "note": "Rewards program available"
+                            },
+                            {
+                              "name": "The Reading Post",
+                              "estimated_delivery": "4-7 business days",
+                              "price_range": "$12-28",
+                              "shipping": "Free shipping on all orders",
+                              "note": "Discount retailer with overstock books"
+                            }
+                          ],
+                          "special_order_option": {
+                            "service": "BookHaven Orangeville Special Orders",
+                            "phone": "(555) 555-2665",
+                            "estimated_time": "5-10 business days",
+                            "note": "Support local business - they can order any book in print"
+                          },
+                          "recommendation": "Consider calling BookHaven Orangeville first for special orders to support local business."
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1781914017.578348
+        },
+        {
+          "invocation_id": "e-d044bee5-0e52-453f-93d0-19bd7532d45f",
+          "user_content": {
+            "parts": [
+              {
+                "text": "let's order online"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Great choice! Based on the search results, here is the fastest way to get it online:\n\n🚚 **Fastest Online Option:**\n**MapleLeaf Books Online**\n*   **Delivery:** 2-3 business days\n*   **Price:** $18–$35\n*   **Shipping:** Free shipping on orders over $35\n*   *Note: It's a woman-owned and operated business!* 🌟\n\nIf you'd prefer to support another local shop that offers special orders for pickup (usually 5-10 business days), you can always call **BookHaven Orangeville** at **(555) 555-2665**. They can order any book in print for you!\n\nOtherwise, clicking through to MapleLeaf Books Online will get you your copy the quickest. Let me know if you need a link or have any other book requests! 📖✨"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1781914083.121084
+        }
+      ],
+      "session_input": {
+        "app_name": "bookfinder",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1781914115.034604
+    }
+  ],
+  "creation_timestamp": 1781914105.195913
+}
