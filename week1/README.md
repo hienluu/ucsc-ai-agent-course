@@ -22,3 +22,4 @@
 * [Gemini ADK examples](https://github.com/janakiramm/gemini-adk.git)
 * [Agents in Action](https://github.com/traversaal-ai/agents-in-action/tree/main)
 * [Claude Code Clone](https://github.com/hienluu/claude-code-clone)
+* [Not all AI agents are created equal](https://www.lennysnewsletter.com/p/not-all-ai-agents-are-created-equal)
