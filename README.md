@@ -14,6 +14,10 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+06/22/2026
+* [Microsoft's Agents hub](https://learn.microsoft.com/en-us/agents/)
+
+  
 06/15/2026
 * [5-Day AI Agents Intensive Course](https://www.kaggle.com/learn-guide/5-day-agents)
 * [5-Day AI Agents: Intensive Vibe Coding Course With Google](https://www.kaggle.com/competitions/5-day-ai-agents-intensive-vibecoding-course-with-google)
