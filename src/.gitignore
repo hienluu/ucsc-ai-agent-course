@@ -14,3 +14,4 @@ wheels/
 
 # adk session.db
 **/.adk/session.db
+**/.adk

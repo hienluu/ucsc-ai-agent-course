@@ -3,8 +3,17 @@ from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
 from typing import Dict
 
+from langsmith.integrations.google_adk import configure_google_adk
+
 from dotenv import load_dotenv
 load_dotenv()
+
+# Configure LangSmith tracing
+langsmith_tracing = os.getenv("LANGSMITH_TRACING", "false").lower().strip() == "true"
+print(f">>> Configuring LangSmith tracing: {langsmith_tracing}")
+if langsmith_tracing:
+    print("LangSmith tracing enabled, configuring tracing...")
+    configure_google_adk(project_name="ProductResearchAgentEvaluation")
 
 DOUBLEWORD_API_KEY = os.getenv("DOUBLEWORD_API_KEY")
 DOUBLEWORD_MODEL = os.getenv("DOUBLEWORD_MODEL")
@@ -258,7 +267,7 @@ You are a book finder agent for Orangeville residents. 📚 Your job is to help 
 * **Be friendly and brief** in your responses! 🏪📖
 """
 
-litellm = LiteLlm(
+doubleword_llm = LiteLlm(
         model=f"{DOUBLEWORD_MODEL}",
         api_base=f"{DOUBLEWORD_API_URL}",
         api_key=f"{DOUBLEWORD_API_KEY}",
@@ -267,7 +276,7 @@ litellm = LiteLlm(
 
 agent = Agent(
     #model="gemini-2.5-flash",
-    model=litellm,
+    model=doubleword_llm,
     name="book_finder",
     instruction=agent_instruction,
     tools=[
