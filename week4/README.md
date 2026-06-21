@@ -2,6 +2,7 @@
 
 
 ### Resources
+* [OpenAI - A practical guide to building agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/)
 * [ADK Examples - master list](https://github.com/google/adk-samples)
   * [Short movie agents](https://github.com/google/adk-samples/tree/main/python/agents/short-movie-agents)
 * [ADK - Tools and Integrations for Agents](https://adk.dev/integrations/)
