@@ -7,12 +7,17 @@ requires-python = ">=3.10"
 dependencies = [
     "anthropic>=0.97.0",
     "dotenv>=0.9.9",
+    "ddgs>=9.14.4",
     "dw-cli>=0.1.23",
     "fastmcp>=3.4.2",
     "google-adk[eval]<=1.35.0",
     "google-genai>=1.74.0",
     "langsmith[google-adk]>=0.8.16",
     "litellm>=1.83.0",
+    "nest-asyncio>=1.6.0",
     "openai>=2.33.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
     "rich>=15.0.0",
+    "streamlit>=1.32.0"
 ]
