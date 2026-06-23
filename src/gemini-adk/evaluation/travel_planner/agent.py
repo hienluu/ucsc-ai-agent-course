@@ -8,8 +8,16 @@ import requests
 from dotenv import load_dotenv
 from ddgs import DDGS
 from google.adk.agents import LlmAgent
+from langsmith.integrations.google_adk import configure_google_adk
 
 load_dotenv()
+
+# Configure LangSmith tracing
+langsmith_tracing = os.getenv("LANGSMITH_TRACING", "false").lower().strip() == "true"
+print(f">>> Configuring LangSmith tracing: {langsmith_tracing}")
+if langsmith_tracing:
+    print("LangSmith tracing enabled, configuring tracing...")
+    configure_google_adk(project_name="TravelPlannerAgent")
 
 #MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 MODEL = "gemini-3.1-flash-lite"
