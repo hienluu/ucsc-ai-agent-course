@@ -14,6 +14,9 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+06/28/2026
+* [Loop Engineering](https://www.deeplearning.ai/the-batch/three-key-loops-for-building-great-software)
+  
 06/22/2026
 * [Microsoft's Agents hub](https://learn.microsoft.com/en-us/agents/)
 * [Loop Engineering]
