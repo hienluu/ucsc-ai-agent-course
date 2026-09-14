@@ -14,6 +14,9 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+09/13/2026
+* [CMU - AI Agents course](https://www.cmu-agents.com/#/)
+  
 06/28/2026
 * [Loop Engineering](https://www.deeplearning.ai/the-batch/three-key-loops-for-building-great-software)
   
