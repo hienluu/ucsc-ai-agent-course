@@ -7,3 +7,4 @@
   * [LangSmith platform](https://smith.langchain.com)
 * [Claude Workshop - Eval-Driven Agent Development](https://github.com/anthropics/cwc-workshops/tree/main/eval-driven-agent-development)
 * [Evaluating Agents with ADK, Part 1](https://medium.com/google-cloud/evaluating-agents-with-adk-part-1-the-development-loop-with-the-adk-web-ui-7822b592498a)
+* [Arize: Hands-On Evals for Agentic Applications: good one](https://www.youtube.com/watch?v=Xfl50508LZM&t=3349s)
