@@ -14,6 +14,10 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+09/21/2026
+* [Jev - System one model](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+* [Effective Claude Code - the operating system for AI agent harness](https://github.com/affaan-m/ECC)
+
 09/13/2026
 * [CMU - AI Agents course](https://www.cmu-agents.com/#/)
   
