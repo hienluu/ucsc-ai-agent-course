@@ -18,6 +18,7 @@
 * [Jev - System one model](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 * [Effective Claude Code - the operating system for AI agent harness](https://github.com/affaan-m/ECC)
 * [Public APIs repository](https://github.com/public-apis/public-apis)
+* [Build with Gemini · Track 3](https://storage.googleapis.com/bwg-track3-demo-guide/VM-Manual/index.html)
 
 09/13/2026
 * [CMU - AI Agents course](https://www.cmu-agents.com/#/)
