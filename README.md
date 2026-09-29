@@ -8,7 +8,7 @@
 * Evaluation & Observability
 
 ### Session Info.
-* 7 sessions: from 05/19 to 06/30
+* 7 sessions: from 10/01 to 11/13
 
 ### Setup Steps
 * see [README.md in src folder](./src/README.md)
@@ -17,6 +17,7 @@
 09/21/2026
 * [Jev - System one model](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 * [Effective Claude Code - the operating system for AI agent harness](https://github.com/affaan-m/ECC)
+* [Public APIs repository](https://github.com/public-apis/public-apis)
 
 09/13/2026
 * [CMU - AI Agents course](https://www.cmu-agents.com/#/)
