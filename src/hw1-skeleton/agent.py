@@ -13,9 +13,8 @@ The agent exposes two tools (defined in tools.py):
     * add_numbers(a, b)       — add two numbers
 
 Run it interactively:
-    python -m hw1-skeleton.agent
-        or
-    cd src/hw1-skeleton && python agent.py
+    - cd src/hw1-skeleton
+    - uv run agent.py
 
 Make sure GOOGLE_API_KEY is set in your environment (see ../.env).
 """

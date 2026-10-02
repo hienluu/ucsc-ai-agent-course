@@ -40,7 +40,7 @@ source .venv/bin/activate
 cp env.example .env       # then edit .env and add your GOOGLE_API_KEY
 ```
 
-You can also set `GEMINI_MODEL` in `.env` (defaults to `gemini-2.5-flash`).
+You can also set `GEMINI_MODEL` in `.env` (defaults to `gemini-3.5-flash`).
 
 ## Your tasks
 
@@ -62,7 +62,7 @@ You can also set `GEMINI_MODEL` in `.env` (defaults to `gemini-2.5-flash`).
 
    ```bash
    cd src/hw1-skeleton
-   python agent.py
+   uv run agent.py
    ```
 
    Suggested prompts to test:
