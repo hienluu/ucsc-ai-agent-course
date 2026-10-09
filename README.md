@@ -14,6 +14,9 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+10/04/2026
+* [Building the Agent Stack: a complete architecture guide](https://www.youtube.com/playlist?list=PLX_ZCM9fAiR3bzZD-OU__6pgBdpYUGaVs)
+
 09/21/2026
 * [Jev - System one model](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 * [Effective Claude Code - the operating system for AI agent harness](https://github.com/affaan-m/ECC)
