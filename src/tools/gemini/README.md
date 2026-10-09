@@ -32,7 +32,7 @@ uv run -m tools.gemini.gemini --prompt "What's the latitude and longitude of San
 Go into gemini folder
 
 ```bash
-adk run agemini_agent
+adk run gemini_agent
 ```
 
 ## Key Components
