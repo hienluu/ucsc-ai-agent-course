@@ -14,6 +14,12 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+10/11/2026
+* [Gemini 4 - Argon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)
+* [Introducing Muse Spark Open](https://research.meta.ai/blog/muse-spark-open)
+* [Muse personal agent](https://muse.ai/)
+* [Grok Bot - AI teammates you can give real work to](https://x.ai/bot)
+
 10/04/2026
 * [Building the Agent Stack: a complete architecture guide](https://www.youtube.com/playlist?list=PLX_ZCM9fAiR3bzZD-OU__6pgBdpYUGaVs)
 
