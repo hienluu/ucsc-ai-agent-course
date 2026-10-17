@@ -19,7 +19,9 @@
 * [Introducing Muse Spark Open](https://research.meta.ai/blog/muse-spark-open)
 * [Muse personal agent](https://muse.ai/)
 * [Grok Bot - AI teammates you can give real work to](https://x.ai/bot)
-* [google/adk-recipes](https://developers.googleblog.com/three-layers-one-repo-a-tour-of-googleadk-recipes/)
+* [google/adk-recipes]
+  * [blog](https://developers.googleblog.com/three-layers-one-repo-a-tour-of-googleadk-recipes/)
+  * [github](https://github.com/google/adk-recipes)
 
 10/04/2026
 * [Building the Agent Stack: a complete architecture guide](https://www.youtube.com/playlist?list=PLX_ZCM9fAiR3bzZD-OU__6pgBdpYUGaVs)
