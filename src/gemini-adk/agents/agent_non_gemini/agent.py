@@ -16,20 +16,20 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-DOUBLEWORD_API_KEY = os.getenv("DOUBLEWORD_API_KEY")
-DOUBLEWORD_MODEL = os.getenv("DOUBLEWORD_MODEL")
-DOUBLEWORD_API_URL = os.getenv("DOUBLEWORD_API_URL")
+LLM_PROVIDER_API_KEY = os.getenv("LLM_PROVIDER_API_KEY")
+LLM_PROVIDER_MODEL = os.getenv("LLM_PROVIDER_MODEL")
+LLM_PROVIDER_URL = os.getenv("LLM_PROVIDER_URL")
 
-if DOUBLEWORD_API_KEY is None:
-    raise ValueError("DOUBLEWORD_API_KEY is not set in the environment variables.")
+if LLM_PROVIDER_API_KEY is None:
+    raise ValueError("LLM_PROVIDER_API_KEY is not set in the environment variables.")
 
-print(f"DOUBLEWORD_MODEL: {DOUBLEWORD_MODEL}")
-print(f"DOUBLEWORD_API_URL: {DOUBLEWORD_API_URL}")
+print(f"LLM_PROVIDER_MODEL: {LLM_PROVIDER_MODEL}")
+print(f"LLM_PROVIDER_URL: {LLM_PROVIDER_URL}")
 
 litellm = LiteLlm(
-        model=f"{DOUBLEWORD_MODEL}",
-        api_base=f"{DOUBLEWORD_API_URL}",
-        api_key=f"{DOUBLEWORD_API_KEY}",
+        model=f"{LLM_PROVIDER_MODEL}",
+        api_base=f"{LLM_PROVIDER_URL}",
+        api_key=f"{LLM_PROVIDER_API_KEY}",
         include_reasoning=False, # Set to False to exclude reasoning steps from the response
 )
 
