@@ -46,7 +46,7 @@ thinking_mcp_tool = McpToolset(connection_params=StdioConnectionParams(
 
 
 root_agent = LlmAgent(
-    model='gemini-3.1-flash-lite',
+    model='gemini-3.5-flash-lite',
     name='mcp_example_agent',
     description='A helpful assistant for user questions.  You have access to tools that can help you answer user questions. Use them when appropriate.',
     instruction='Answer user questions to the best of your knowledge',
