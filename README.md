@@ -14,6 +14,10 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+10/18/2026
+* [Codex System Prompt](https://developers.openai.com/cookbook/examples/gpt-5/codex_prompting_guide)
+* [Claude Prompting Guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
+
 10/11/2026
 * [Gemini 4 - Argon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)
 * [Introducing Muse Spark Open](https://research.meta.ai/blog/muse-spark-open)
