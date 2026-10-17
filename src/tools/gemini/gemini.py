@@ -361,7 +361,7 @@ def main():
     args = parser.parse_args()
     
     load_dotenv()
-    gemini_model = args.model or os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+    gemini_model = args.model or os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
     print(f"Using Gemini model: {gemini_model}")
     print(f"Prompt: {args.prompt}")
     print(f"Mode: {args.mode}")

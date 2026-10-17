@@ -45,18 +45,15 @@ async def chat_loop():
        
         final_response = ""
         event_no = 0
-        try:
-            async for event in events:
-                event_no += 1
-                print_json_response(event, f"==== Event {event_no} ====")
-                
-                if event.is_final_response():
-                    final_response = event.content.parts[0].text
-                    print(f"\n agent response: {final_response}\n")
-                    break
-        finally:
-            # Explicitly close the async generator to ensure proper cleanup
-            await events.aclose()
+        # Consume the generator fully; breaking early closes ADK's nested
+        # generators mid-span and triggers OpenTelemetry "Failed to detach context" errors.
+        async for event in events:
+            event_no += 1
+            print_json_response(event, f"==== Event {event_no} ====")
+
+            if event.is_final_response() and event.content and event.content.parts:
+                final_response = event.content.parts[0].text
+                print(f"\n agent response: {final_response}\n")
 
 def print_json_response(response: any, title:str) -> None:
     print(f"\n====== {title} =====")
