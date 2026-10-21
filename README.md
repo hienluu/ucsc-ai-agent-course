@@ -17,7 +17,8 @@
 10/18/2026
 * [Codex System Prompt](https://developers.openai.com/cookbook/examples/gpt-5/codex_prompting_guide)
 * [Claude Prompting Guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
-* [Harness2: Recursive Agent Harnessing for an Open World](https://arxiv.org/pdf/2610.14224)
+* [Harness2: Recursive Agent Harnessing for an Open World](https://arxiv.org/pdf/2610.14224)\
+* [Gemini 4 Argon: 10 incredible AI demos (1M token output in action)](https://www.youtube.com/watch?v=gRhM1h10T3U)
 
 10/11/2026
 * [Gemini 4 - Argon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/)
