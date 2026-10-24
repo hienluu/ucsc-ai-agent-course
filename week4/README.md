@@ -20,3 +20,4 @@
 * [AgentOps: Human Approval Workflow Example](https://github.com/AgentOps-AI/agentops/blob/main/examples/google_adk/human_approval.ipynb)
 * [ADK Blogger Examples (Sequential, Loop, Critique) - with MCP](https://github.com/smithakolan/awesome-ai-agents/tree/main)]
   * [youtube video](https://www.youtube.com/watch?v=Zqno_vux6d8)
+* [Galileo Agent Leaderboard v2 - Dataset](https://huggingface.co/datasets/galileo-ai/agent-leaderboard-v2)
