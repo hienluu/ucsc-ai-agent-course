@@ -1,4 +1,4 @@
-## UCSC Extesnion - [Developing AI Agent Applications Course](https://www.ucsc-extension.edu/courses/developing-ai-agent-applications)
+## UCSC Extension - [Developing AI Agent Applications Course](https://www.ucsc-extension.edu/courses/developing-ai-agent-applications)
 
 ### Syllabus
 * Foundation & Architecture
