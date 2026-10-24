@@ -20,8 +20,10 @@ def get_model():
                             DOUBLEWORD_API_URL.
     """
     provider = os.getenv("MODEL_PROVIDER", "gemini").lower()
+    print(f">>>>>>>>>>> Using model provider: {provider}")
 
     if provider == "doubleword":
+        print(">>>>>>>>>Using doubleword model provider.")
         from google.adk.models.lite_llm import LiteLlm
 
         api_key = os.getenv("DOUBLEWORD_API_KEY")
@@ -35,5 +37,20 @@ def get_model():
             api_key=api_key,
             include_reasoning=False,
         )
+    elif provider == "openai_compatible":
+        print(">>>>>>>>> Using OpenAI-compatible model provider.")
+        from google.adk.models.lite_llm import LiteLlm
 
-    return os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
+        api_key = os.getenv("LLM_PROVIDER_API_KEY")
+        model = os.getenv("LLM_PROVIDER_MODEL")
+        api_url = os.getenv("LLM_PROVIDER_URL")
+        if api_key is None:
+            raise ValueError("OPENAI_API_KEY is not set in the environment.")
+        return LiteLlm(
+            model=model,
+            api_base=api_url,
+            api_key=api_key,
+            include_reasoning=False,
+        )
+    print(">>>>>>>>> Using OpenAI-compatible model provider.")
+    return os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
