@@ -14,6 +14,8 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+10/15/2026
+* [Graph Workflows in ADK: Everything You Need to Know](https://cloud.google.com/blog/topics/developers-practitioners/graph-workflows-in-adk-everything-you-need-to-know)
 10/18/2026
 * [Codex System Prompt](https://developers.openai.com/cookbook/examples/gpt-5/codex_prompting_guide)
 * [Claude Prompting Guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
