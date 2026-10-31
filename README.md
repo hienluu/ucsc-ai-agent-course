@@ -17,6 +17,7 @@
 10/25/2026
 * [Graph Workflows in ADK: Everything You Need to Know](https://cloud.google.com/blog/topics/developers-practitioners/graph-workflows-in-adk-everything-you-need-to-know)
 * [Google 4.0 carbon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/)
+* [Genie 4: A new generation of world simulation](https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/)
 
 10/18/2026
 * [Codex System Prompt](https://developers.openai.com/cookbook/examples/gpt-5/codex_prompting_guide)
