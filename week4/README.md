@@ -2,6 +2,8 @@
 
 
 ### Resources
+* [Graph Workflows in ADK: Everything You Need to Know](https://cloud.google.com/blog/topics/developers-practitioners/graph-workflows-in-adk-everything-you-need-to-know)
+* [ADK2 Tutorial - including workflow](https://github.com/cuppibla/adk2-tutorial)
 * [OpenAI - A practical guide to building agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/)
 * [ADK Examples - master list](https://github.com/google/adk-samples)
   * [Short movie agents](https://github.com/google/adk-samples/tree/main/python/agents/short-movie-agents)
