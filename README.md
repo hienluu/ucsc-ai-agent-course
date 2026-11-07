@@ -14,6 +14,9 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+11/09/2026
+* [AI Agent Guardrails](https://www.youtube.com/watch?v=9Ek2cvIHq1c)
+
 11/02/2026
 * [How to Trace and Evaluate a Google ADK Agent with Opik](https://www.comet.com/site/blog/trace-evaluate-google-adk-agent-opik/)
 * [Evaluating and Improving Agentic Applications - DeepLearning.AI](https://www.deeplearning.ai/courses/evaluating-and-improving-agentic-applications)
