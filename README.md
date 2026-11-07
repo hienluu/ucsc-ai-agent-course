@@ -14,6 +14,12 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+11/02/2026
+* [How to Trace and Evaluate a Google ADK Agent with Opik](https://www.comet.com/site/blog/trace-evaluate-google-adk-agent-opik/)
+* [Evaluating and Improving Agentic Applications - DeepLearning.AI](https://www.deeplearning.ai/courses/evaluating-and-improving-agentic-applications)
+* [DeepSeek open-sources Super-Agent, a coding agent that reads team chats](https://thenextweb.com/news/deepseek-super-agent-open-source-coding-agent)
+* [Why Evaluate Agents](https://adk.dev/evaluate/)
+
 10/25/2026
 * [Graph Workflows in ADK: Everything You Need to Know](https://cloud.google.com/blog/topics/developers-practitioners/graph-workflows-in-adk-everything-you-need-to-know)
 * [Google 4.0 carbon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/)
