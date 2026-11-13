@@ -14,7 +14,10 @@
 * see [README.md in src folder](./src/README.md)
 
 ### News of the week
+
 11/09/2026
+* [Claude Fable 5.2 and Mythos 5.2](https://www.anthropic.com/claude-fable-and-mythos-5-2)
+* [Gemini Decisions API: Fast, calibrated multimodal decisions](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/)
 * [AI Agent Guardrails](https://www.youtube.com/watch?v=9Ek2cvIHq1c)
 
 11/02/2026
