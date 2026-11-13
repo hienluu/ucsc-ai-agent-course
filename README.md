@@ -20,6 +20,7 @@
 * [Gemini Decisions API: Fast, calibrated multimodal decisions](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/)
 * [Introducing Gemini 4 Hydrogen](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/)
 * [Claude Certified Architect - Foundations – Prepare for and pass the exam!](https://www.youtube.com/watch?v=reDRM0tqhNs)
+* [How to Trace and Evaluate a Google ADK Agent with Opik](https://www.comet.com/site/blog/trace-evaluate-google-adk-agent-opik/)
 * [AI Agent Guardrails](https://www.youtube.com/watch?v=9Ek2cvIHq1c)
 
 11/02/2026
